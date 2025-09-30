@@ -1,6 +1,11 @@
 #include "Instructor.h"
+#include <iostream>
 
-Instructor::Instructor(string ced, string nom, string tel, string cor, string fechaNac) : numCedula(ced), nombreCompleto(nom), telefono(tel), correo(cor), fechaNacimiento(fechaNac), numEspecialidades(0), capacidadEspecialidades(5) {
+using namespace std;
+
+Instructor::Instructor(string ced, string nom, string tel, string cor, string fechaNac): 
+                       numCedula(ced), nombreCompleto(nom), telefono(tel), correo(cor),  
+                       fechaNacimiento(fechaNac), numEspecialidades(0), capacidadEspecialidades(5) {
 
     especialidades = new string[capacidadEspecialidades];
 }
@@ -37,10 +42,10 @@ void Instructor::mostrarInfo() const {
     cout << "Especialidades: " << getEspecialidadesString() << endl;
 }
 
-string Instructor::getCedula() const { return numCedula; }
-string Instructor::getNombre() const { return nombreCompleto; }
-string Instructor::getTelefono() const { return telefono; }
-string Instructor::getCorreo() const { return correo; }
+string Instructor::getCedula()          const { return numCedula; }
+string Instructor::getNombre()          const { return nombreCompleto; }
+string Instructor::getTelefono()        const { return telefono; }
+string Instructor::getCorreo()          const { return correo; }
 string Instructor::getFechaNacimiento() const { return fechaNacimiento; }
 
 string Instructor::getEspecialidadesString() const {
@@ -60,3 +65,4 @@ bool Instructor::tieneEspecialidad(string especialidad) const {
     }
     return false;
 }
+
